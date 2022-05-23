@@ -37,7 +37,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 			
 			case HCSR04_WAIT_EXT_FALLING_STATE: 
 			{
-			  if (HAL_GPIO_ReadPin(HCSR04_ECHO_GPIO_Port,HCSR04_ECHO_Pin) == 0){
+			  if ( HAL_GPIO_ReadPin(HCSR04_ECHO_GPIO_Port,HCSR04_ECHO_Pin) == 0 ){
 				// ngat canh xuong thi tat timer di va tinh toan khoang cach
 					HAL_TIM_Base_Stop(hcsr04.htim); // tat timer3
 					// Khong nen tao ham con trong ngat, co the bi treo may 
@@ -55,9 +55,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 
 void HCSR04_start()
 {	
- HAL_GPIO_WritePin(HCSR04_TRIG_GPIO_Port,HCSR04_TRIG_Pin,GPIO_PIN_SET);
- hcsr04_state = HCSR04_GEN_PULSE_STATE;
- time_start_gen_pulse = HAL_GetTick();
+	
+	 HAL_GPIO_WritePin(HCSR04_TRIG_GPIO_Port,HCSR04_TRIG_Pin,GPIO_PIN_SET);
+	 hcsr04_state = HCSR04_GEN_PULSE_STATE;
+	 time_start_gen_pulse = HAL_GetTick();
+	
 }
 
 

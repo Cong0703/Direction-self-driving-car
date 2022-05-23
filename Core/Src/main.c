@@ -113,9 +113,6 @@ int main(void)
    
     /* USER CODE BEGIN 3 */
 		get_instance();
-//		if (hcsr04.distance <= 5 && hcsr04.distance >0)
-//		  direction_handle(hcsr04.distance,buff_distance);
-// servo_write(&sv1,180);
   }
   /* USER CODE END 3 */
 }

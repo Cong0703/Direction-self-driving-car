@@ -7,6 +7,4 @@
 
 void direction_handle(float *buff);
 
-
-
 #endif

@@ -1,3 +1,7 @@
+/*
+Dem : la bien dem so lan quay cua servo G90, max =2 vi chi quay trai va phai
+*/
+
 #include "direction_handle.h"
 #include "hcsr04.h"
 #include "Servo.h"
@@ -16,11 +20,11 @@ void direction_handle(float *buff)
 	 {
 		 dem=0;
 		 buff[1] = kc;
-		 servo_write(&sv1,goc);
+		 //servo_write(&sv1,goc);
      time=HAL_GetTick();		 
 	 }
    
-   if (HAL_GetTick()-time <=1000)
+   if (HAL_GetTick()-time <=700 && goc==90)
 	 {
 		 //waiting
 	 }		 
@@ -34,7 +38,7 @@ void direction_handle(float *buff)
 			 
        goc=180;
 			 time=HAL_GetTick();
-			 while(HAL_GetTick()-time <=1000)
+			 while(HAL_GetTick()-time <=500)
 			 {
 				 //waiting
 			 }
@@ -46,7 +50,7 @@ void direction_handle(float *buff)
 			  buff[0] = kc;
 			  dem++;
 			  time=HAL_GetTick();
-			 while(HAL_GetTick()-time <=1000)
+			 while(HAL_GetTick()-time <=500)
 			 {
 				 //waiting
 			 }
