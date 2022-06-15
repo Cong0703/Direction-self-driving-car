@@ -1,0 +1,1 @@
+xe_dieu_khien_tu_hanh\startup_stm32f103xb.o: startup_stm32f103xb.s
